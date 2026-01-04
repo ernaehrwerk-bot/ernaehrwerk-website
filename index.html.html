@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[[Tobias Weitbrecht]] – [[Fachkrankenpfleger & Ganzheitlicher Ernährungsberater]]</title>
+  <meta name="description" content="[[Kurzbeschreibung: Ganzheitliche Ernährungsberatung – evidenzbasiert, alltagstauglich, persönlich.]]" />
+
+  <!-- Open Graph (Social Sharing) -->
+  <meta property="og:title" content="[[Tobias Weitbrecht]]" />
+  <meta property="og:description" content="[[Kurzbeschreibung deiner Arbeit]]" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero.jpg" />
+
+  <style>
+    /* ====== Design-System (an Logo angelehnt) ====== */
+    :root{
+      --bg0:#070a0c;            /* fast schwarz */
+      --bg1:#0b1114;            /* tiefes blaugrün */
+      --card:#0f171b;           /* Kartenfläche */
+      --line:rgba(240,240,240,.10);
+      --text:#e9eef0;           /* hell */
+      --muted:rgba(233,238,240,.72);
+      --teal:#105050;           /* approx. aus Logo */
+      --teal2:#1a6f6f;          /* heller Akzent */
+      --white:#f0f0f0;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 18px;
+      --max: 1120px;
+      --glow: 0 0 26px rgba(26,111,111,.40);
+      --glow-strong: 0 0 44px rgba(26,111,111,.55);
+      --ring: 0 0 0 3px rgba(26,111,111,.28);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 50% 18%, rgba(26,111,111,.20), transparent 55%),
+        radial-gradient(700px 480px at 20% 55%, rgba(26,111,111,.12), transparent 55%),
+        radial-gradient(900px 600px at 80% 70%, rgba(26,111,111,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      letter-spacing: .2px;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding: 0 20px; }
+
+    /* ====== Header ====== */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,12,.60);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 240px;
+    }
+    .brand img{
+      width: 42px; height:42px; object-fit:contain;
+      filter: drop-shadow(var(--glow));
+    }
+    .brand .btxt{ line-height:1.1; }
+    .brand .name{ font-weight:700; font-size:14px; letter-spacing:.7px; text-transform:uppercase; }
+    .brand .role{ font-size:12px; color:var(--muted); }
+
+    .navlinks{
+      display:flex; align-items:center; gap:16px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .navlinks a{
+      font-size:13px; color:var(--muted);
+      padding:10px 10px; border-radius: 999px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{
+      color:var(--text);
+      border-color: rgba(26,111,111,.35);
+      box-shadow: var(--glow);
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(26,111,111,.55);
+      background: linear-gradient(180deg, rgba(16,80,80,.42), rgba(16,80,80,.18));
+      color: var(--white);
+      box-shadow: var(--glow);
+      font-weight: 650;
+      font-size: 13px;
+      white-space:nowrap;
+    }
+    .btn:hover{ box-shadow: var(--glow-strong); transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px); }
+
+    /* ====== Sections ====== */
+    section{ padding: 64px 0; }
+    .grid{ display:grid; gap:22px; }
+    .hero{
+      padding: 56px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero .grid{
+      grid-template-columns: 1.12fr .88fr;
+      align-items:center;
+    }
+
+    h1{
+      margin: 0 0 12px;
+      font-size: clamp(28px, 3.4vw, 46px);
+      letter-spacing: .6px;
+      line-height: 1.08;
+      text-shadow: 0 0 18px rgba(26,111,111,.18);
+    }
+    .lead{
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 56ch;
+    }
+    .pillrow{
+      display:flex; gap:10px; flex-wrap:wrap; margin: 18px 0 22px;
+    }
+    .pill{
+      font-size: 12px;
+      color: rgba(233,238,240,.88);
+      border:1px solid rgba(233,238,240,.14);
+      background: rgba(15,23,27,.55);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .card{
+      background: rgba(15,23,27,.72);
+      border: 1px solid rgba(233,238,240,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card.pad{ padding: 18px; }
+    .card h3{ margin: 0 0 8px; font-size: 16px; letter-spacing:.4px; }
+    .card p{ margin:0; color: var(--muted); line-height: 1.6; font-size: 14px; }
+
+    .media{
+      position:relative;
+      min-height: 360px;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid rgba(233,238,240,.10);
+      background:
+        radial-gradient(420px 260px at 50% 30%, rgba(26,111,111,.28), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.01)),
+        rgba(15,23,27,.65);
+      box-shadow: var(--shadow);
+    }
+    .media img{
+      width:100%; height:100%; object-fit:cover;
+      opacity:.75;
+      mix-blend-mode: screen;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .media .badge{
+      position:absolute; left:14px; bottom:14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(7,10,12,.62);
+      border: 1px solid rgba(26,111,111,.45);
+      box-shadow: var(--glow);
+      font-size: 12px;
+      color: rgba(233,238,240,.88);
+      max-width: 46ch;
+    }
+
+    /* ====== About / Services ====== */
+    .two{
+      grid-template-columns: 1fr 1fr;
+      align-items:stretch;
+    }
+
+    .services{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .service-top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom: 10px;
+    }
+    .tag{
+      font-size: 11px;
+      color: rgba(233,238,240,.82);
+      border: 1px solid rgba(26,111,111,.45);
+      background: rgba(16,80,80,.16);
+      padding: 6px 10px;
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(26,111,111,.20);
+      white-space:nowrap;
+    }
+    .list{
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height:1.7;
+      font-size: 14px;
+    }
+    .list li{ margin: 6px 0; }
+
+    /* ====== Process / Testimonials ====== */
+    .steps{ grid-template-columns: repeat(3, 1fr); }
+    .quote{
+      padding: 18px;
+      border-left: 3px solid rgba(26,111,111,.65);
+      background: rgba(15,23,27,.55);
+      border-radius: 14px;
+    }
+    .quote p{ margin:0 0 10px; }
+    .quote .by{ font-size: 12px; color: rgba(233,238,240,.68); }
+
+    /* ====== Contact ====== */
+    form{ display:grid; gap:12px; }
+    label{ font-size: 12px; color: rgba(233,238,240,.78); }
+    input, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(233,238,240,.14);
+      background: rgba(7,10,12,.35);
+      color: var(--text);
+      outline: none;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(26,111,111,.65);
+      box-shadow: var(--ring);
+    }
+    textarea{ min-height: 130px; resize: vertical; }
+    .small{ font-size: 12px; color: rgba(233,238,240,.62); line-height: 1.6; }
+
+    /* ====== Footer ====== */
+    footer{
+      padding: 34px 0 44px;
+      border-top: 1px solid var(--line);
+      color: rgba(233,238,240,.62);
+      font-size: 12px;
+    }
+    .foot{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+      flex-wrap:wrap;
+    }
+    .foot a{ color: rgba(233,238,240,.72); }
+    .foot a:hover{ color: var(--text); text-decoration: underline; }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 920px){
+      .hero .grid{ grid-template-columns: 1fr; }
+      .media{ min-height: 280px; }
+      .two{ grid-template-columns: 1fr; }
+      .services{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+      .navlinks{ gap: 6px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Zur Startseite">
+        <img src="assets/logo.png" alt="Logo Tobias Weitbrecht" />
+        <div class="btxt">
+          <div class="name">TOBIAS WEITBRECHT</div>
+          <div class="role">Fachkrankenpfleger • Ganzheitlicher Ernährungsberater • Fachberater für Nahrungsergäzungsmittel</div>
+        </div>
+      </a>
+
+      <nav class="navlinks" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#ueber">Über mich</a>
+	<a href="#blog">Blog</a>
+        <a href="#kontakt" class="btn">Erstgespräch anfragen</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <h1>Ganzheitliche Ernährungsberatung<br/>für echte Ergebnisse im Alltag</h1>
+          <p class="lead">
+            Meine Beratung richtet sich an alle, die ihren Lebensstil nachhaltig verbessern möchten – insbesondere an Kinder, Jugendliche und Familien. Im Mittelpunkt stehen langanhaltende Gewichtsreduktion, bessere Essgewohnheiten und mehr Gesundheit im Alltag. Zusätzlich biete ich Sonderkonzepte für unter anderem Menopause, Schichtarbeit sowie die Begleitung bei ernährungsbedingten chronischen Erkrankungen an
+          </p>
+
+          <div class="pillrow">
+            <div class="pill">Evidenzbasiert</div>
+            <div class="pill">Alltagstauglich</div>
+            <div class="pill">Individuell</div>
+            <div class="pill">Supplement-Check</div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
+            <a class="btn" href="#leistungen" style="border-color: rgba(233,238,240,.16); background: rgba(15,23,27,.40); box-shadow:none;">
+              Leistungen ansehen
+            </a>
+          </div>
+
+          <p class="small" style="margin-top:14px;">
+            Hinweis/Disclaimer: Keine Heilversprechen. Bei Diagnosen/Medikation erfolgt die Begleitung ergänzend und in Abstimmung.
+          </p>
+        </div>
+
+        <div class="media" aria-label="Hero Bildbereich">
+          <!-- ERSETZEN: assets/hero.jpg gegen dein Bild -->
+          <img src="assets/hero.jpg" alt="[[Platzhalterbild: Beratung/Health/Lifestyle]]" />
+          <div class="badge">
+            <strong style="color:rgba(233,238,240,.92);">Kostenloses Erstgespräch</strong><br/>
+            Platzhalter: 15 Minuten • online/telefonisch • unverbindlich
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="card pad" style="margin-bottom:18px;">
+        <h3>Leistungen</h3>
+        <p>Neben der Einzelberatung biete ich ein 6-wöchiges Familienprogramm sowie Spezialprogramme für die Postmenopause, für Schichtarbeit und die begleitende Ernährung bei ernährungsbedingten chronischen Erkrankungen – auf Wunsch in Kooperation mit Ärztinnen und Ärzten. Für Kinder gibt es eigene Beratungsformate, außerdem erstelle ich bei Bedarf einen individuellen Nahrungsergänzungsmittelplan sowie einen einfachen Bewegungs-/Sportplan, der in den Alltag passt. Mein Ansatz ist wissenschaftlich fundiert, freundlich klar und praxisnah: kleine Schritte, realistische Wochenziele, kurze Check-ins.</p>
+      </div>
+
+      <div class="grid services">
+        <div class="card pad">
+          <div class="service-top">
+            <h3>Ernährungs-Check-up</h3>
+            <div class="tag">60 Min</div>
+          </div>
+          <p>Im Check-up analysieren wir deine aktuelle Ernährung, deinen Alltag und deine Ziele und identifizieren die wichtigsten Stellschrauben für nachhaltige Veränderungen. Du bekommst klare, umsetzbare Empfehlungen und einen ersten Plan für die nächsten Tage, der zu deinem Leben passt. Ideal als Einstieg oder wenn du wieder Struktur und Orientierung brauchst.</p>
+               
+          </ul>
+        </div>
+
+        <div class="card pad">
+          <div class="service-top">
+            <h3>Wochen Coaching</h3>
+            <div class="tag">Begleitung</div>
+          </div>
+          <p>Dieses Coaching richtet sich an alle, die langfristig Gewicht reduzieren und einen gesunden Lebensstil aufbauen möchten – ohne kurzfristige Diäten. Wir entwickeln gemeinsam Routinen, die alltagstauglich sind, arbeiten an Sättigung, Portionssteuerung und Verhalten und passen den Plan kontinuierlich an. Ziel ist ein System, das auch nach dem Coaching funktioniert.</p>
+          <ul class="list">
+         
+          </ul>
+        </div>
+
+        <div class="card pad">
+          <div class="service-top">
+            <h3>Familie mit Kindern</h3>
+            <div class="tag">Begleitung</div>
+          </div>
+          <p>Für Familien, die gesunde Ernährung im Alltag leichter und entspannter gestalten möchten – mit besonderem Fokus auf Kinder. Wir schaffen klare, praktikable Strukturen für Mahlzeiten, Snacks, Einkauf und Umfeld, ohne Druck oder Verbote. Ergebnis: ein stabiler Familienrahmen, der gesunde Gewohnheiten langfristig unterstützt.</p>
+          <ul class="list">
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section id="ablauf">
+    <div class="wrap">
+      <div class="grid steps">
+        <div class="card pad">
+          <h3>Kennenlernen</h3>
+          <p>Ziele, Erwartungen, Rahmen. Passen wir zusammen? Ein gutes Ergebniss wird auch durch Sympathie getragen.</p>
+        </div>
+        <div class="card pad">
+          <h3>Analyse</h3>
+          <p>Alltag, Ernährung, ggf. Werte/Diagnostik nach Absprache</p>
+        </div>
+        <div class="card pad">
+          <h3>Plan & Umsetzung</h3>
+          <p>Maßnahmen, Routinen, Feedback, Anpassung</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜBER MICH -->
+  <section id="ueber">
+    <div class="wrap">
+      <div class="grid two">
+        <div class="media" aria-label="Über mich Bildbereich">
+          <!-- ERSETZEN: assets/about.jpg gegen dein Foto -->
+          <img src="assets/about.jpg" alt="[[Platzhalter: Portrait/Arbeitsumfeld]]" />
+          <div class="badge">
+            <strong style="color:rgba(233,238,240,.92);">Dein Ansatz</strong><br/>
+            ganzheitlich • evidenzbasiert • menschlich
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h3>Über mich</h3>
+          <p style="margin-bottom:12px;">
+           Ich bin 1988 geboren, verheiratet und Vater von zwei Kindern. Neben meiner Arbeit bin ich leidenschaftlicher Kinderfußballtrainer und Sportler – Bewegung und Gesundheit gehören für mich einfach zusammen. Außerdem bin ich musikalisch und finde in der Musik einen wichtigen Ausgleich im Alltag.
+          </p>
+          <div class="card pad" style="background: rgba(7,10,12,.25); border-color: rgba(26,111,111,.25); box-shadow: none;">
+            <h3 style="margin-bottom:6px;">Qualifikationen</h3>
+            <ul class="list" style="margin-top:8px;">
+              <li>Fachkrankenpfleger für Anästhsie und Intensivepflege</li>
+              <li>Ganzheitlicher Ernährungsberater</li>
+              <li>Fachberatung Nahrungsergänzungsmittel</li>
+         
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (Platzhalter) -->
+  <section>
+    <div class="wrap">
+      <div class="grid two">
+        <div class="card pad">
+          <h3>Ergebnisse & Feedback</h3>
+          <p>Nico</p>
+          <div style="height:12px;"></div>
+          <div class="quote">
+            <p>„nico“</p>
+            <div class="by">[[Vorname, Alter, Ziel]]</div>
+          </div>
+          <div style="height:12px;"></div>
+          <div class="quote">
+            <p>„philllip“</p>
+            <div class="by">[[Vorname, Ziel]]</div>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h3>FAQ</h3>
+          <p><strong>Wie läuft das Erstgespräch ab?</strong><br/>Wir lernen uns kennen, du schilderst deine probleme und deine erwartung</p>
+          <div style="height:10px;"></div>
+          <p><strong>Wichtig zu wissen!</strong><br/>Ich arbeite zur Zeit immer noch Vollzeit als Pflegekraft! Also kann es sein das ich nicht immer unmittelbar antworte.</p>
+          <div style="height:10px;"></div>
+          <p><strong>Was kostet die Beratung?</strong><br/>Das kommt darauf an was du möchtest. Du bekommst in jedem fall immer eine Preisliste nach dem erstgespräch zu geschickt</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- BLOG (auf einer Seite, Beiträge klappbar) -->
+<section id="blog">
+  <div class="wrap">
+    <div class="card pad" style="margin-bottom:18px;">
+      <h3>Blog</h3>
+      <p>Wöchentliche Impulse zu nachhaltigem Abnehmen, Familienernährung und alltagstauglichen Routinen.</p>
+    </div>
+
+    <div class="blog-grid">
+      <!-- BLOGPOST: KOPIEREN + DATUM/TITEL/TEXT ANPASSEN -->
+      <article class="card pad blog-post" id="blog-2025-01-12">
+        <div class="meta">
+          <h3 style="margin:0;"></h3>
+          <span class="date">10.01.2026</span>
+        </div>
+        <p class="teaser">„Cholesterin ist eine Lüge“</p>
+
+        <details>
+          <summary>Weiterlesen</summary>
+          <div class="content">
+            <p><strong>1)Cholesterin-Lüge? Und was haben Eier damit zu tun?</strong>
+
+„Cholesterin ist eine Lüge“ ist als Aussage zu pauschal. Richtig ist:
+
+Cholesterin ist lebenswichtig (Zellmembranen, Hormone, Gallensäuren).
+
+Ein hoher LDL-Spiegel im Blut über lange Zeit ist ein zentraler Risikofaktor für Atherosklerose.
+
+Cholesterin aus der Nahrung wirkt bei vielen Menschen weniger stark auf LDL als früher gedacht.
+
+<p><strong>1) Der Kern der „Lüge“: Nahrungscholesterin ≠ Blut-LDL (1:1)</strong>
+
+Der Körper stellt den Großteil des Cholesterins selbst her. Wenn du mehr Cholesterin isst, reguliert die Leber bei vielen Menschen gegen (Produktion runter, Aufnahme angepasst). Deshalb reagieren Menschen unterschiedlich:
+
+„Normal-Responder“: kaum Veränderung der Blutfette
+
+„Hyper-Responder“: LDL kann merklicher steigen
+
+<p><strong>2) Warum Eier im Fokus stehen</strong>
+
+Eier enthalten relativ viel Nahrungscholesterin (vor allem im Eigelb). Darum galten sie lange als „Cholesterinproblem“. In der Praxis ist aber oft etwas anderes der Haupttreiber:
+
+<p><strong>3) Was die meisten Studien/Leitlinien in der Praxis zeigen</strong>
+
+Für das LDL ist bei vielen Menschen gesättigtes Fett wichtiger als Nahrungscholesterin. Bedeutet konkret:
+
+Eier an sich sind häufig nicht das Problem.
+
+Problematischer sind typische Kombis: Eier + Speck/Wurst + Käse + Buttertoast (viel gesättigtes Fett, oft auch hoch verarbeitet).
+
+Kurzfazit zu Eiern:
+
+Für viele gesunde Menschen passt moderater Eierkonsum (z. B. einige Eier pro Woche, teils auch 1/Tag) in eine herzgesunde Ernährung – abhängig vom Gesamtmuster.
+
+Entscheidend ist immer: Gesamternährung, Körpergewicht, Bewegung, Ballaststoffe.
+
+<p><strong>4) Wer bei Eiern vorsichtiger sein sollte</strong>
+
+Eier sind kein „No-Go“, aber bei folgenden Situationen lohnt sich mehr Zurückhaltung bzw. Monitoring:
+
+LDL deutlich erhöht (oder Non-HDL/ApoB hoch)
+
+familiäre Hypercholesterinämie / starke Familienbelastung
+
+bereits bestehende Herz-Kreislauf-Erkrankung
+Dann gilt: zuerst die großen Hebel optimieren (gesättigte Fette runter, Ballaststoffe rauf) und ggf. Eiermenge individuell anpassen.
+
+<p><strong>5) Praktische Regeln</strong>
+
+Eier sind okay – der Kontext zählt.
+
+Wenn LDL hoch ist:
+
+öfter „1 ganzes Ei + extra Eiweiß“ statt 3–4 Eigelb
+
+Wurst/Speck/Käse/Butter als Beilagen reduzieren
+
+mehr lösliche Ballaststoffe (Hafer, Hülsenfrüchte, Gemüse) einbauen
+
+Wer es genau wissen will: 6–8 Wochen konstant essen → Lipidwerte kontrollieren.</p>
+            
+          </div>
+        </details>
+      </article>
+
+      <article class="card pad blog-post" id="blog-2025-01-05">
+        <div class="meta">
+          <h3 style="margin:0;">Willkommen beim Ernährwerk-Blog</h3>
+          <span class="date">05.01.2026</span>
+        </div>
+        <p class="teaser">Warum nachhaltige Routinen wichtiger sind als kurzfristige Diäten – und was du hier künftig erwarten kannst.</p>
+
+        <details>
+          <summary>Weiterlesen</summary>
+          <div class="content">
+            <p>Hier teile ich wöchentliche Inhalte, die du direkt umsetzen kannst – ohne Diät-Druck und ohne komplizierte Regeln.</p>
+            <p>Mein Fokus: langfristige Gewichtsreduktion, gesunde Gewohnheiten und ein Lebensstil, der bleibt – besonders auch für Familien, Kinder und Jugendliche.Checkt auch gerne mein Instagram Profil, hier findet ihr regelmäßig interessante Infos rund um Ernährung.</p>
+            <p>Wenn du Themenwünsche hast (Menopause, Schichtarbeit, chronische Erkrankungen), schreib mir gern per Mail.</p>
+          </div>
+        </details>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  <!-- KONTAKT (vereinfacht) -->
+<section id="kontakt">
+  <div class="wrap">
+    <div class="card pad" style="text-align:center;">
+      <h3>Kontakt</h3>
+      <p class="small" style="margin: 8px auto 16px; max-width: 70ch;">
+        Schreib mir gerne eine E-Mail – ich melde mich so schnell wie möglich zurück.
+      </p>
+
+      <a class="btn" href="mailto:ernaehrwerk@gmail.com?subject=Erstgespräch%20Anfrage">
+        E-Mail senden
+      </a>
+    </div>
+  </div>
+</section>
+
+            
+
+<footer>
+  <div class="wrap">
+    <div class="foot" style="align-items:center;">
+      <!-- Links: Logo + Name -->
+      <div style="display:flex; align-items:center; gap:12px;">
+        <a href="#top" aria-label="Zur Startseite">
+          <img
+            src="assets/logo.png"
+            alt="Logo Ernährwerk"
+            style="width:44px; height:44px; object-fit:contain; filter: drop-shadow(0 0 26px rgba(26,111,111,.40));"
+          />
+        </a>
+
+        <div>
+          <strong style="color:rgba(233,238,240,.82); letter-spacing:.5px;">TOBIAS WEITBRECHT</strong><br/>
+          <span>Fachkrankenpfleger & Ganzheitlicher Ernährungsberater</span>
+        </div>
+      </div>
+
+      <!-- Rechts: Links + Social -->
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end; align-items:center;">
+        <a href="LINK_IMPRESSUM">Impressum</a>
+        <a href="LINK_DATENSCHUTZ">Datenschutz</a>
+        <a href="#top">Nach oben</a>
+
+        <span style="opacity:.35;">|</span>
+
+        <!-- Social Links -->
+        <a href="https://www.instagram.com/ernaehrwerk/" target="_blank" rel="noopener">
+          Instagram
+        </a>
+        <a href="www.linkedin.com/in/tobias-weitbrecht" target="_blank" rel="noopener">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      © <span id="year"></span> Tobias Weitbrecht. Alle Rechte vorbehalten.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+</body>
+</html>
